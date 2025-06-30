@@ -1,0 +1,121 @@
+.reports-page {
+    display: flex;
+    background-color: #f0f2f5;
+    min-height: 100vh;
+  }
+  
+  .mainContent {
+    flex: 1;
+    padding: 30px;
+  }
+  
+  .reports-content {
+    padding: 20px;
+  }
+  
+  .reports-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1f2d3d;
+    margin-bottom: 25px;
+  }
+  
+  /* 📊 Chart Card Styling */
+  .chart-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+  
+  .chart-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    padding: 25px;
+    background: linear-gradient(135deg, #74ebd5, #9face6); /* visible shiny gradient */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .chart-card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(120deg, rgba(255,255,255,0.1), rgba(255,255,255,0.4), rgba(255,255,255,0.1));
+    transform: rotate(25deg);
+    animation: shine 3s infinite;
+    pointer-events: none;
+  }
+  
+  @keyframes shine {
+    0% {
+      transform: rotate(25deg) translate(-100%, -100%);
+    }
+    50% {
+      transform: rotate(25deg) translate(100%, 100%);
+    }
+    100% {
+      transform: rotate(25deg) translate(200%, 200%);
+    }
+  }
+  
+  .chart-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
+  }
+  
+  .chart-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 16px;
+  }
+  
+  /* 📌 Legends */
+  .chart-legend {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: 14px;
+  }
+  
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+  
+  .blue-dot {
+    background-color: #3498db;
+  }
+  
+  .green-dot {
+    background-color: #2ecc71;
+  }
+  
+  /* 🛠️ Coming Soon Card */
+  .analytics-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .analytics-card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+  }
+  
